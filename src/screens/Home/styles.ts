@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import theme from "src/theme";
 import { ArrowUpRight } from "phosphor-react-native";
@@ -21,6 +21,7 @@ export const Statistic = styled.View<Props>`
 
   height: ${RFValue(102)}px;
   padding: ${RFValue(13)}px;
+  margin-bottom: ${RFValue(40)}px;
 
   background-color: ${({ theme, type }) =>
     type === "PRIMARY" ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
@@ -33,4 +34,13 @@ export const Icon = styled(ArrowUpRight).attrs(({ theme }) => ({
   color: theme.COLORS.GREEN_DARK,
 }))`
   align-self: flex-end;
+`;
+
+export const Text = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.MD}px;
+    color: ${theme.COLORS.GRAY_100};
+    font-family: ${theme.FONT_FAMILY.REGULAR};
+    padding-bottom: ${RFValue(8)}px;
+  `}
 `;

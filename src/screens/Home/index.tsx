@@ -1,14 +1,12 @@
 import React from "react";
 
-import { useTheme } from "styled-components/native";
 import { HighLight } from "@components/HighLight";
 import { HeaderHome } from "./components/HeaderHome";
 
-import { Container, Statistic, Icon, ColorStyleProps } from "./styles";
+import { Container, Statistic, Icon, Text } from "./styles";
+import { Button } from "@components/Button";
 
 export function Home() {
-  const theme = useTheme();
-
   return (
     <Container>
       <HeaderHome />
@@ -17,6 +15,15 @@ export function Home() {
         <Icon />
         <HighLight title="90,86%" subTitle="das refeições dentro da dieta" />
       </Statistic>
+      <Text>Refeições</Text>
+      <Button
+        icon="add"
+        title="Nova refeição"
+        backGround="DARK"
+        color="DARK"
+        iconColor="DARK"
+        isVisible={false}
+      />
     </Container>
   );
 }
