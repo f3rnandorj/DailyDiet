@@ -1,6 +1,6 @@
+import { TouchableOpacity } from "react-native";
 import styled, { css } from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import theme from "src/theme";
 import { ArrowUpRight } from "phosphor-react-native";
 
 export type ColorStyleProps = "PRIMARY" | "SECONDARY";
@@ -14,7 +14,7 @@ export const Container = styled.View`
   margin: ${RFValue(24)}px;
 `;
 
-export const Statistic = styled.View<Props>`
+export const Statistic = styled(TouchableOpacity)<Props>`
   width: 100%;
   justify-content: center;
   align-items: center;

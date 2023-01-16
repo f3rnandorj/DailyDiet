@@ -18,4 +18,6 @@ export const Avatar = styled.Image`
   width: ${RFValue(40)}px;
   height: ${RFValue(40)}px;
   border-radius: ${RFValue(50)}px;
+  border: 2px solid ${({ theme }) => theme.COLORS.GRAY_200};
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
 `;
