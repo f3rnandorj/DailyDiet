@@ -1,9 +1,8 @@
-import styled, { css } from "styled-components/native";
+import { SectionList, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { TouchableOpacity } from "react-native";
+import styled, { css } from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-
 import { ArrowUpRight } from "phosphor-react-native";
 
 export type ColorStyleProps = "PRIMARY" | "SECONDARY";
@@ -47,4 +46,8 @@ export const Text = styled.Text`
     font-family: ${theme.FONT_FAMILY.REGULAR};
     padding-bottom: ${RFValue(8)}px;
   `}
+`;
+
+export const List = styled.View`
+  flex: 1;
 `;

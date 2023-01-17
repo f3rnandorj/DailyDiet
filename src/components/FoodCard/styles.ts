@@ -1,3 +1,4 @@
+import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import styled, { css } from "styled-components/native";
 
@@ -7,7 +8,7 @@ type Props = {
   type: ColorsTypeStyleProps;
 };
 
-export const Container = styled.View`
+export const Container = styled(TouchableOpacity)`
   flex-direction: row;
   align-items: center;
 

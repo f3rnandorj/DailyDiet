@@ -1,12 +1,14 @@
 import React from "react";
-import { TouchableOpacityProps } from "react-native";
+import { SectionList, TouchableOpacityProps } from "react-native";
 
 import { HighLight } from "@components/HighLight";
 import { Button } from "@components/Button";
 import { HeaderHome } from "@components/HeaderHome";
 import { FoodCard } from "@components/FoodCard";
 
-import { Container, Statistic, Icon, Text } from "./styles";
+import { Container, Statistic, Icon, Text, List } from "./styles";
+
+import { food } from "../../Mocks";
 
 type Props = TouchableOpacityProps & {};
 
@@ -32,7 +34,15 @@ export function Home({}: Props) {
         isVisible={false}
       />
 
-      <FoodCard time="20:00" title="X-tudo" type="OK" />
+      <List>
+        <SectionList
+          sections={food}
+          keyExtractor={(item) => item.food}
+          renderItem={({ item }) => <FoodCard {...item} type="OK" />}
+          showsVerticalScrollIndicator={false}
+          renderSectionHeader={({ section: { title } }) => <Text>{title}</Text>}
+        />
+      </List>
     </Container>
   );
 }

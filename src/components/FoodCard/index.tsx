@@ -1,4 +1,5 @@
 import React from "react";
+import { TouchableOpacityProps } from "react-native";
 import {
   Container,
   Hour,
@@ -8,18 +9,18 @@ import {
   ColorsTypeStyleProps,
 } from "./styles";
 
-type Props = {
+type Props = TouchableOpacityProps & {
   time: string;
-  title: string;
+  food: string;
   type: ColorsTypeStyleProps;
 };
 
-export function FoodCard({ time, title, type = "OK" }: Props) {
+export function FoodCard({ time, food, type = "OK" }: Props) {
   return (
     <Container>
       <Hour>{time}</Hour>
       <Separator />
-      <Title>{title}</Title>
+      <Title>{food}</Title>
       <Situation type={type}></Situation>
     </Container>
   );
