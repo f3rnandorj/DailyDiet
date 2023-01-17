@@ -2,10 +2,11 @@ import React from "react";
 import { TouchableOpacityProps } from "react-native";
 
 import { HighLight } from "@components/HighLight";
-import { HeaderHome } from "./components/HeaderHome";
+import { Button } from "@components/Button";
+import { HeaderHome } from "@components/HeaderHome";
+import { FoodCard } from "@components/FoodCard";
 
 import { Container, Statistic, Icon, Text } from "./styles";
-import { Button } from "@components/Button";
 
 type Props = TouchableOpacityProps & {};
 
@@ -30,6 +31,8 @@ export function Home({}: Props) {
         iconColor="DARK"
         isVisible={false}
       />
+
+      <FoodCard time="20:00" title="X-tudo" type="OK" />
     </Container>
   );
 }

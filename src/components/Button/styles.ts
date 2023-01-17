@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components/native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
 
 export type ColorsButtonTypeStyleProps = "DARK" | "LIGHT";
 
@@ -10,11 +11,10 @@ type Props = {
 };
 
 export const Container = styled(TouchableOpacity)<Props>`
-  flex: 1;
   flex-direction: row;
 
-  min-height: 56px;
-  max-height: 56px;
+  min-height: ${RFValue(50)}px;
+  max-height: ${RFValue(50)}px;
 
   background-color: ${({ theme, type }) =>
     type === "LIGHT" ? theme.COLORS.WHITE : theme.COLORS.GRAY_100};

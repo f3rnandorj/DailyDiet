@@ -1,6 +1,9 @@
-import { TouchableOpacity } from "react-native";
 import styled, { css } from "styled-components/native";
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
+
 import { ArrowUpRight } from "phosphor-react-native";
 
 export type ColorStyleProps = "PRIMARY" | "SECONDARY";
@@ -9,9 +12,10 @@ type Props = {
   type: ColorStyleProps;
 };
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
+  flex: 1;
   background-color: ${({ theme }) => theme.COLORS.GRAY_700};
-  margin: ${RFValue(24)}px;
+  padding: ${RFValue(24)}px ${RFValue(24)}px 0 ${RFValue(24)}px;
 `;
 
 export const Statistic = styled(TouchableOpacity)<Props>`
