@@ -8,7 +8,7 @@ import {
 import { ThemeProvider } from "styled-components/native";
 import theme from "./src/theme";
 
-import { Home } from "@screens/Home";
+import { NewMeal } from "@screens/NewMeal";
 import { Loading } from "@components/Loading";
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="auto" />
-      {fontLoaded ? <Home /> : <Loading />}
+      {fontLoaded ? <NewMeal /> : <Loading />}
     </ThemeProvider>
   );
 }

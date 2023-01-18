@@ -30,7 +30,7 @@ export const Percent = styled(TouchableOpacity)<Props>`
   background-color: ${({ theme, type }) =>
     type === "GREEN" ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
 
-  border-radius: ${RFValue(8)}px;
+  border-radius: ${RFValue(20)}px;
 `;
 
 export const Icon = styled(MaterialIcons).attrs<IconProps>(
