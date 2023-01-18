@@ -1,25 +1,24 @@
 import React from "react";
 import { SectionList, TouchableOpacityProps } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import { HighLight } from "@components/HighLight";
 import { Button } from "@components/Button";
 import { HeaderHome } from "@components/HeaderHome";
 import { FoodCard } from "@components/FoodCard";
 
-import { Container, Statistic, Icon, Text, List, Title } from "./styles";
+import { Container, Statistic, Text, List, Title, Icon } from "./styles";
 
 import { food } from "../../Mocks";
 
-type Props = TouchableOpacityProps & {};
-
-export function Home({}: Props) {
+export function Home() {
   return (
     <Container>
       <HeaderHome />
 
       {/* component/modal/reactNavigation */}
-      <Statistic type="PRIMARY">
-        <Icon />
+      <Statistic type="GREEN">
+        <Icon name="call-made" colorIcon="GREEN" />
         <HighLight title="90,86%" subTitle="das refeições dentro da dieta" />
       </Statistic>
 

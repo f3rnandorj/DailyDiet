@@ -1,14 +1,19 @@
 import { TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { MaterialIcons } from "@expo/vector-icons";
+
 import styled, { css } from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { ArrowUpRight } from "phosphor-react-native";
 
-export type ColorStyleProps = "PRIMARY" | "SECONDARY";
+export type ColorStyleProps = "GREEN" | "RED";
 
 type Props = {
   type: ColorStyleProps;
+};
+
+type IconProps = {
+  colorIcon: ColorStyleProps;
 };
 
 export const Container = styled(SafeAreaView)`
@@ -27,15 +32,18 @@ export const Statistic = styled(TouchableOpacity)<Props>`
   margin-bottom: ${RFValue(40)}px;
 
   background-color: ${({ theme, type }) =>
-    type === "PRIMARY" ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
+    type === "GREEN" ? theme.COLORS.GREEN_LIGHT : theme.COLORS.RED_LIGHT};
 
   border-radius: ${RFValue(8)}px;
 `;
 
-export const Icon = styled(ArrowUpRight).attrs(({ theme }) => ({
-  size: 26,
-  color: theme.COLORS.GREEN_DARK,
-}))`
+export const Icon = styled(MaterialIcons).attrs<IconProps>(
+  ({ theme, colorIcon }) => ({
+    size: 26,
+    color:
+      colorIcon === "GREEN" ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_LIGHT,
+  })
+)`
   align-self: flex-end;
 `;
 

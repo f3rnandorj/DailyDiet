@@ -14,18 +14,22 @@ import {
   Title,
   InRow,
   Separator,
+  ColorStyleProps,
 } from "./styles";
 
-type Props = TouchableOpacityProps & {};
+type Props = TouchableOpacityProps & {
+  type: ColorStyleProps;
+  color?: ColorStyleProps;
+};
 
-export function Statistic({ ...rest }: Props) {
+export function Statistic({ type, color, ...rest }: Props) {
   const { COLORS } = useTheme();
   return (
     <Container>
       <StatusBar backgroundColor={COLORS.GREEN_LIGHT} />
 
-      <Percent type="PRIMARY" {...rest}>
-        <Icon />
+      <Percent type="GREEN" {...rest}>
+        <Icon name="arrow-back" colorIcon="GREEN" />
         <HighLight title="90,86%" subTitle="das refeições dentro da dieta" />
       </Percent>
 
