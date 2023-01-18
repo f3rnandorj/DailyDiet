@@ -15,7 +15,7 @@ type Props = TouchableOpacityProps & {
   type: ColorsTypeStyleProps;
 };
 
-export function FoodCard({ time, food, type = "OK" }: Props) {
+export function FoodCard({ time, food, type = "ON-DIET" }: Props) {
   return (
     <Container>
       <Hour>{time}</Hour>

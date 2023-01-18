@@ -1,4 +1,4 @@
-import { SectionList, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import styled, { css } from "styled-components/native";
@@ -50,4 +50,13 @@ export const Text = styled.Text`
 
 export const List = styled.View`
   flex: 1;
+`;
+
+export const Title = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.LG}px;
+    color: ${theme.COLORS.GRAY_100};
+    font-family: ${theme.FONT_FAMILY.BOLD};
+    padding-top: ${RFValue(20)}px;
+  `}
 `;

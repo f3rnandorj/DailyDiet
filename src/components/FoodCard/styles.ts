@@ -2,7 +2,7 @@ import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import styled, { css } from "styled-components/native";
 
-export type ColorsTypeStyleProps = "OK" | "NOT-OK";
+export type ColorsTypeStyleProps = "ON-DIET" | "OUT_DIET";
 
 type Props = {
   type: ColorsTypeStyleProps;
@@ -55,7 +55,7 @@ export const Situation = styled.View<Props>`
   width: ${RFValue(14)}px;
 
   background-color: ${({ theme, type }) =>
-    type === "OK" ? theme.COLORS.GREEN_MID : theme.COLORS.RED_MID};
+    type === "ON-DIET" ? theme.COLORS.GREEN_MID : theme.COLORS.RED_MID};
 
   border-radius: 50px;
 `;

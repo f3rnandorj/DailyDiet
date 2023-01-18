@@ -6,7 +6,7 @@ import { Button } from "@components/Button";
 import { HeaderHome } from "@components/HeaderHome";
 import { FoodCard } from "@components/FoodCard";
 
-import { Container, Statistic, Icon, Text, List } from "./styles";
+import { Container, Statistic, Icon, Text, List, Title } from "./styles";
 
 import { food } from "../../Mocks";
 
@@ -38,9 +38,11 @@ export function Home({}: Props) {
         <SectionList
           sections={food}
           keyExtractor={(item) => item.food}
-          renderItem={({ item }) => <FoodCard {...item} type="OK" />}
+          renderItem={({ item }) => <FoodCard {...item} type="ON-DIET" />}
           showsVerticalScrollIndicator={false}
-          renderSectionHeader={({ section: { title } }) => <Text>{title}</Text>}
+          renderSectionHeader={({ section: { title } }) => (
+            <Title>{title}</Title>
+          )}
         />
       </List>
     </Container>
