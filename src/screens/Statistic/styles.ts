@@ -49,7 +49,8 @@ export const InfoDetails = styled.View`
 
   background-color: ${({ theme }) => theme.COLORS.GRAY_700};
 
-  border-radius: 20px;
+  border-top-left-radius: ${RFValue(20)}px;
+  border-top-right-radius: ${RFValue(20)}px;
 
   margin-top: ${RFValue(-15)}px;
   padding: 0 ${RFValue(24)}px;

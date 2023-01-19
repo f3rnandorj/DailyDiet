@@ -2,7 +2,15 @@ import React from "react";
 
 import { Input } from "@components/Input";
 
-import { Container, Header, ButtonReturn, Icon, Form, Text } from "./styles";
+import {
+  Container,
+  Header,
+  ButtonReturn,
+  Icon,
+  Form,
+  Title,
+  TimeHour,
+} from "./styles";
 
 export function NewMeal() {
   return (
@@ -11,11 +19,17 @@ export function NewMeal() {
         <ButtonReturn>
           <Icon name="arrow-back" colorIcon="GREEN" />
         </ButtonReturn>
-        <Text>oiiiiii</Text>
+        <Title>Nova refeição</Title>
       </Header>
 
       <Form>
-        <Input />
+        <Input type="SIMPLE" title="Nome" />
+        <Input type="DESCRIPTION" title="Descrição" />
+
+        <TimeHour>
+          <Input type="TIME-HOUR" title="Data" />
+          <Input type="TIME-HOUR" title="Hora" />
+        </TimeHour>
       </Form>
     </Container>
   );

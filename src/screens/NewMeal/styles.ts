@@ -7,27 +7,22 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 export type ColorStyleProps = "GREEN" | "RED";
 
-type Props = {
-  type: ColorStyleProps;
-};
-
 type IconProps = TouchableOpacity & {
   colorIcon: ColorStyleProps;
 };
 
 export const Container = styled.View`
   flex: 1;
+  background-color: ${({ theme }) => theme.COLORS.GRAY_500};
 `;
 
 export const Header = styled(SafeAreaView)`
-  height: ${RFValue(120)}px;
+  height: ${RFValue(110)}px;
   width: 100%;
 
   flex-direction: row;
 
   align-items: center;
-
-  background-color: ${({ theme }) => theme.COLORS.GRAY_500};
 `;
 
 export const ButtonReturn = styled(TouchableOpacity)`
@@ -42,7 +37,7 @@ export const Icon = styled(MaterialIcons).attrs<IconProps>(
   })
 )``;
 
-export const Text = styled.Text`
+export const Title = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.LG}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
@@ -53,4 +48,19 @@ export const Text = styled.Text`
   text-align: center;
 `;
 
-export const Form = styled.View``;
+export const Form = styled.View`
+  flex: 1;
+
+  border-top-left-radius: ${RFValue(20)}px;
+  border-top-right-radius: ${RFValue(20)}px;
+
+  /* padding-top: ${RFValue(40)}px; */
+  padding: ${RFValue(40)}px ${RFValue(24)}px ${RFValue(24)}px ${RFValue(24)}px;
+
+  background-color: ${({ theme }) => theme.COLORS.GRAY_700};
+`;
+
+export const TimeHour = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
