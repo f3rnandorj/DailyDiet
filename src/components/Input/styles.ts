@@ -10,7 +10,6 @@ type Props = {
 
 export const Container = styled.View`
   padding-bottom: ${RFValue(24)}px;
-  justify-content: flex-start;
 `;
 
 export const Title = styled.Text`
@@ -22,6 +21,9 @@ export const Title = styled.Text`
 `;
 
 export const BoxInput = styled(TextInput)<Props>`
+  justify-content: center;
+  align-items: center;
+
   ${({ type }) => css`
     ${type === "SIMPLE" &&
     css`

@@ -61,6 +61,13 @@ export const Form = styled.View`
 `;
 
 export const TimeHour = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const ConfirmComponentButton = styled.View`
+  flex: 1;
   flex-direction: row;
   justify-content: space-between;
 `;

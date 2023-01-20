@@ -22,7 +22,7 @@ export function Input({ inputRef, title, type, ...rest }: Props) {
         ref={inputRef}
         placeholderTextColor={COLORS.GRAY_300}
         {...rest}
-      ></BoxInput>
+      />
     </Container>
   );
 }

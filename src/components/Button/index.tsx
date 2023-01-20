@@ -6,26 +6,26 @@ import { Container, Title, Icon, ColorsButtonTypeStyleProps } from "./styles";
 
 type Props = TouchableOpacityProps & {
   title: string;
-  icon: keyof typeof MaterialIcons.glyphMap;
-  backGround: ColorsButtonTypeStyleProps;
-  color: ColorsButtonTypeStyleProps;
-  iconColor: ColorsButtonTypeStyleProps;
-  isVisible: boolean;
+  icon?: keyof typeof MaterialIcons.glyphMap;
+  backGroundColor: ColorsButtonTypeStyleProps;
+  colorText: ColorsButtonTypeStyleProps;
+  iconColor?: ColorsButtonTypeStyleProps;
+  isVisible?: boolean;
 };
 
 export function Button({
   title,
   icon,
-  backGround,
+  backGroundColor,
   iconColor,
-  color,
+  colorText,
   isVisible,
   ...rest
 }: Props) {
   return (
-    <Container isBorderVisible={isVisible} type={backGround} {...rest}>
+    <Container isBorderVisible={isVisible} type={backGroundColor} {...rest}>
       <Icon name={icon} type={iconColor} />
-      <Title type={color}>{title}</Title>
+      <Title type={colorText}>{title}</Title>
     </Container>
   );
 }
