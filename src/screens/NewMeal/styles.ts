@@ -5,14 +5,8 @@ import styled, { css } from "styled-components/native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export type ColorStyleProps = "GREEN" | "RED";
-
-type IconProps = TouchableOpacity & {
-  colorIcon: ColorStyleProps;
-};
-
 export const Container = styled.View`
-  flex: 1;
+  height: 100%;
   background-color: ${({ theme }) => theme.COLORS.GRAY_500};
 `;
 
@@ -29,13 +23,12 @@ export const ButtonReturn = styled(TouchableOpacity)`
   padding-left: ${RFValue(24)}px;
 `;
 
-export const Icon = styled(MaterialIcons).attrs<IconProps>(
-  ({ theme, colorIcon }) => ({
-    size: 26,
-    color:
-      colorIcon === "GREEN" ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_LIGHT,
-  })
-)``;
+export const Icon = styled(MaterialIcons).attrs(({ theme }) => ({
+  size: 26,
+  color: theme.COLORS.GRAY_200,
+}))`
+  width: 100%;
+`;
 
 export const Title = styled.Text`
   ${({ theme }) => css`
@@ -54,20 +47,19 @@ export const Form = styled.View`
   border-top-left-radius: ${RFValue(20)}px;
   border-top-right-radius: ${RFValue(20)}px;
 
-  /* padding-top: ${RFValue(40)}px; */
   padding: ${RFValue(40)}px ${RFValue(24)}px ${RFValue(24)}px ${RFValue(24)}px;
 
   background-color: ${({ theme }) => theme.COLORS.GRAY_700};
 `;
 
 export const TimeHour = styled.View`
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
 `;
 
 export const ConfirmComponentButton = styled.View`
   flex: 1;
+
   flex-direction: row;
   justify-content: space-between;
 `;

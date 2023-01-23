@@ -7,31 +7,43 @@ import {
   Container,
   Header,
   ButtonReturn,
-  Icon,
   Form,
   Title,
   TimeHour,
   ConfirmComponentButton,
 } from "./styles";
 import { Button } from "@components/Button";
+import { ButtonIcon } from "@components/ButtonIcon";
 
 export function NewMeal() {
   return (
     <Container>
       <Header>
         <ButtonReturn>
-          <Icon name="arrow-back" colorIcon="GREEN" />
+          <ButtonIcon icon="arrow-back" />
         </ButtonReturn>
+
         <Title>Nova refeição</Title>
       </Header>
 
       <Form>
-        <Input type="SIMPLE" title="Nome" />
-        <Input type="DESCRIPTION" title="Descrição" />
+        <Input typeBox="SIMPLE" title="Nome" />
+
+        <Input typeBox="DESCRIPTION" title="Descrição" />
 
         <TimeHour>
-          <Input type="TIME-HOUR" title="Data" />
-          <Input type="TIME-HOUR" title="Hora" />
+          <Input
+            whenTypeIsTimeHour="TIME-HOUR"
+            typeBox="TIME-HOUR"
+            title="Data"
+            style={{ marginRight: 10 }}
+          />
+          <Input
+            whenTypeIsTimeHour="TIME-HOUR"
+            typeBox="TIME-HOUR"
+            title="Hora"
+            style={{ marginLeft: 10 }}
+          />
         </TimeHour>
 
         <ConfirmComponentButton>

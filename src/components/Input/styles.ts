@@ -8,8 +8,15 @@ type Props = {
   type: InputTypeProps;
 };
 
-export const Container = styled.View`
-  padding-bottom: ${RFValue(24)}px;
+export const Container = styled.View<Props>`
+  ${({ type }) => css`
+    ${type === "TIME-HOUR" &&
+    css`
+      flex: 1;
+    `}
+  `}
+
+  margin-bottom: ${RFValue(24)}px;
 `;
 
 export const Title = styled.Text`
@@ -21,33 +28,27 @@ export const Title = styled.Text`
 `;
 
 export const BoxInput = styled(TextInput)<Props>`
-  justify-content: center;
-  align-items: center;
-
   ${({ type }) => css`
     ${type === "SIMPLE" &&
     css`
-      min-height: ${RFValue(45)}px;
-      max-height: ${RFValue(45)}px;
+      height: ${RFValue(45)}px;
     `}
     ${type === "DESCRIPTION" &&
     css`
-      min-height: ${RFValue(115)}px;
-      max-height: ${RFValue(115)}px;
+      height: ${RFValue(115)}px;
     `}
     ${type === "TIME-HOUR" &&
     css`
-      min-height: ${RFValue(45)}px;
-      max-height: ${RFValue(45)}px;
-      padding-right: 40%;
+      height: ${RFValue(45)}px;
     `}
   `}
   ${({ theme }) => css`
     background-color: ${theme.COLORS.GRAY_700};
-    color: ${theme.COLORS.WHITE};
+    color: ${theme.COLORS.GRAY_100};
     font-size: ${theme.FONT_SIZE.MD}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
   `}
   border: 1px solid ${({ theme }) => theme.COLORS.GRAY_500};
-  border-radius: 6px;
+  border-radius: ${RFValue(6)}px;
+  padding: ${RFValue(14)}px;
 `;
