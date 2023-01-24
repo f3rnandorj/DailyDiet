@@ -1,10 +1,14 @@
 import React from "react";
 import { Container, LoadIndicator } from "./styles";
 
-export function Loading() {
+type Props = {
+  color?: string;
+};
+
+export function Loading({ color }: Props) {
   return (
     <Container>
-      <LoadIndicator />
+      <LoadIndicator color={color} />
     </Container>
   );
 }

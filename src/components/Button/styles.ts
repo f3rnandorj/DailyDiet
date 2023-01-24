@@ -3,38 +3,25 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
-export type ColorsButtonTypeStyleProps = "DARK" | "LIGHT";
-
-type Props = {
-  type: ColorsButtonTypeStyleProps;
-  isBorderVisible?: boolean;
-};
-
-export const Container = styled(TouchableOpacity)<Props>`
+export const Container = styled(TouchableOpacity)`
   flex-direction: row;
-
-  min-height: ${RFValue(50)}px;
-  max-height: ${RFValue(50)}px;
-
-  background-color: ${({ theme, type }) =>
-    type === "LIGHT" ? theme.COLORS.WHITE : theme.COLORS.GRAY_100};
-
-  border-radius: 6px;
-  border: ${(props) => (props.isBorderVisible ? "1px solid #eeeeee" : null)};
-
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  height: ${RFValue(50)}px;
+
+  border-radius: 6px;
+  margin-bottom: 10px;
 `;
 
-export const Title = styled.Text<Props>`
-  ${({ theme, type }) => css`
-    font-size: ${theme.FONT_SIZE.MD}px;
-    color: ${type === "DARK" ? theme.COLORS.WHITE : theme.COLORS.GRAY_100};
+export const Title = styled.Text`
+  ${({ theme }) => css`
+    font-size: ${theme.FONT_SIZE.SM}px;
     font-family: ${theme.FONT_FAMILY.BOLD};
   `}
 `;
 
-export const Icon = styled(MaterialIcons).attrs<Props>(({ theme, type }) => ({
-  size: 24,
-  color: type === "DARK" ? theme.COLORS.WHITE : theme.COLORS.GRAY_100,
-}))``;
+export const Icon = styled(MaterialIcons)``;
+
+export const LoadIndicator = styled.ActivityIndicator``;

@@ -15,7 +15,6 @@ export const Container = styled.View<Props>`
       flex: 1;
     `}
   `}
-
   margin-bottom: ${RFValue(24)}px;
 `;
 
@@ -25,6 +24,7 @@ export const Title = styled.Text`
     font-family: ${theme.FONT_FAMILY.BOLD};
     color: ${theme.COLORS.GRAY_200};
   `}
+  text-align: left;
 `;
 
 export const BoxInput = styled(TextInput)<Props>`
@@ -36,6 +36,7 @@ export const BoxInput = styled(TextInput)<Props>`
     ${type === "DESCRIPTION" &&
     css`
       height: ${RFValue(115)}px;
+      text-align-vertical: top;
     `}
     ${type === "TIME-HOUR" &&
     css`

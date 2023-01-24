@@ -20,7 +20,7 @@ export function Input({
   return (
     <Container type={whenTypeIsTimeHour}>
       <Title>{title}</Title>
-      <BoxInput type={typeBox} ref={inputRef} {...rest} />
+      <BoxInput multiline={true} type={typeBox} ref={inputRef} {...rest} />
     </Container>
   );
 }
