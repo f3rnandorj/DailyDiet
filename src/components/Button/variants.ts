@@ -14,7 +14,7 @@ type ButtonStyle = {
   };
 };
 
-type ButtonVariant = {
+export type ButtonVariant = {
   enabled: ButtonStyle;
   disabled: ButtonStyle;
 };

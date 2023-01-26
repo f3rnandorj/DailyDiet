@@ -1,26 +1,54 @@
 import React from "react";
 import { TextInput, TextInputProps } from "react-native";
+import { Controller, Control, RegisterOptions } from "react-hook-form";
 
-import { Container, Title, BoxInput, InputTypeProps } from "./styles";
+import { Container, BoxInput } from "./styles";
+import { variants } from "./variants";
+
 //retirar foco no input
 type Props = TextInputProps & {
   inputRef?: React.RefObject<TextInput>;
-  title: string;
-  typeBox: InputTypeProps;
-  whenTypeIsTimeHour?: InputTypeProps;
+  variant?: "line" | "box" | "timeHour";
+  style?: TextInputProps["style"];
+
+  name: string;
+  control: Control;
+  rules?: RegisterOptions;
+  keyboardType?: string;
 };
 
 export function Input({
   inputRef,
-  title,
-  typeBox,
-  whenTypeIsTimeHour = "SIMPLE",
+  variant = "line",
+  style,
+  name,
+  control,
+  rules,
+  keyboardType,
   ...rest
 }: Props) {
+  const inputVariant = variants[variant];
+
+  const inputStyle = inputVariant.inputBox;
+
   return (
-    <Container type={whenTypeIsTimeHour}>
-      <Title>{title}</Title>
-      <BoxInput multiline={true} type={typeBox} ref={inputRef} {...rest} />
+    <Container>
+      <Controller
+        name={name}
+        control={control}
+        rules={rules || {}}
+        render={({ field }) => (
+          <BoxInput
+            value={field.value}
+            keyboardType={keyboardType}
+            onChangeText={field.onChange}
+            style={[inputStyle.inputSize, style]}
+            multiline={true}
+            ref={inputRef}
+            {...rest}
+          />
+        )}
+      />
     </Container>
   );
 }
